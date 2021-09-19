@@ -3,7 +3,7 @@ on: [push]
 jobs:
   build-dummy:
     env:
-      SECRET_1: 30
+      SECRET_1: ${{ secrets.SECRET_1 }}
     runs-on: ubuntu-latest
     steps:      
 
