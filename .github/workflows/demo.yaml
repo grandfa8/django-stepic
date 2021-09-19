@@ -1,9 +1,11 @@
 name: pipeline dummy
 on: [push]
 env:
-  SECRET_1: '${{ secrets.SECRET_1 }}'
+  SECRET_1: ${{ secrets.SECRET_1 }}
 jobs:
   build-dummy:
+    env:
+      SECRET_1: ${{ secrets.SECRET_1 }}
     runs-on: ubuntu-latest
     steps:      
 
