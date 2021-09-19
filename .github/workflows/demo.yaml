@@ -3,7 +3,7 @@ on: [push]
 jobs:
   build-dummy:
     env:
-      SECRET_1: ${{ secrets.SECRET_1 }}
+      SECRET_1: 30
     runs-on: ubuntu-latest
     steps:      
 
@@ -20,7 +20,7 @@ jobs:
         run: |
           ls ${{ github.workspace }}
       - run: echo "🍏 This job's status is ${{ job.status }}."
-      - run: sleep 30
+
   test-dummy:
     needs: build-dummy
     runs-on: ubuntu-latest
