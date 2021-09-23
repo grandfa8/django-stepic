@@ -4,12 +4,10 @@ jobs:
   build-dummy:
     environment: demoenv
     env:
-      SECRET_1: ${{ env.SECRET_1 }}
       SECRET_2: ${{ demoenv.SECRET_1 }}
       SECRET_3: ${{ secrets.SECRET_1 }}
     runs-on: ubuntu-latest
     steps:      
-      - run: echo ${SECRET_1}
       - run: echo ${SECRET_2}
       - run: echo ${SECRET_3}
       - run: echo ${GITHUB_REF//refs\/heads\//}
