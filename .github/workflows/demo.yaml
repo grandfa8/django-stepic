@@ -2,7 +2,6 @@ name: pipeline dummy
 on: [push]
 jobs:
   build-dummy:
-    environment: demoenv
     env:
       SECRET_3: ${{ secrets.SECRET_1 }}
     runs-on: ubuntu-latest
